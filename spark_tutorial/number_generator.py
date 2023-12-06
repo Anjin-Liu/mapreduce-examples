@@ -24,7 +24,7 @@ try:
         conn.send(f"{number}\n".encode('utf-8'))
 
         # Wait for a second before sending the next number
-        time.sleep(1)
+        time.sleep(5)
 except KeyboardInterrupt:
     print("Interrupted by the user")
 
