@@ -1,12 +1,11 @@
 from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
-import json
 
 def process_rdd(rdd):
-    for record in rdd.collect():
-        print(record)
+    for number in rdd.collect():
+        print(f"Received number: {number}")
 
-sc = SparkContext("local[2]", "RedditStreamApp")
+sc = SparkContext("local[2]", "NumberStreamApp")
 ssc = StreamingContext(sc, 1)
 
 TCP_IP = 'localhost'
