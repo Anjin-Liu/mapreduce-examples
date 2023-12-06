@@ -27,28 +27,27 @@ s.bind((TCP_IP, TCP_PORT))
 s.listen(1)
 print(f"Listening on port: {TCP_PORT}")
 
-# Class for handling Twitter Stream
-class TweetListener(tweepy.StreamListener):
-    def on_status(self, status):
-        global conn
-        if conn:
-            try:
-                tweet_text = status.extended_tweet["full_text"]
-            except AttributeError:
-                tweet_text = status.text
-            print(tweet_text)
-            conn.send(tweet_text.encode('utf-8'))
-
-    def on_error(self, status_code):
-        print(f"Error: {status_code}")
-        return False
-
 # Wait for a connection
 conn, addr = s.accept()
 
-# Setup stream listener
-stream_listener = TweetListener()
-stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
+# Function to send data to socket
+def send_to_socket(data):
+    global conn
+    if conn:
+        try:
+            tweet_text = json.loads(data)['data']['text']
+            print(tweet_text)
+            conn.send(tweet_text.encode('utf-8'))
+        except:
+            pass
 
-# Start streaming
-stream.filter(track=LISTEN_TERMS)
+# Stream class using the new Tweepy implementation
+class MyStream(tweepy.StreamingClient):
+    def on_tweet(self, tweet):
+        send_to_socket(json.dumps({'data': tweet}))
+
+# Initialize and start the stream
+stream = MyStream(bearer_token=api.auth.access_token)
+for term in LISTEN_TERMS:
+    stream.add_rules(tweepy.StreamRule(term))
+stream.filter()
