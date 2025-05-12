@@ -4,6 +4,8 @@
 
 This guide provides a structured approach to writing a high-quality academic paper, especially in technical and scientific domains. It is designed to help clearly articulate the **problem**, justify the **significance**, critically review existing **literature**, detail the **methodology**, and present **experimental** evidence to support your claims.
 
+This is not only beneficial for writing academic papers, but also for efficiently locating key information within them.
+
 ---
 
 Most Journals and Conference will follow this structure
@@ -12,13 +14,13 @@ Title
 
 Abstract
 
-Introduction --> Problem Statement and Research Motivation
+1. Introduction --> Problem Statement and Research Motivation
 
-Literature Review (Related Works) --> Literature Review
+2. Literature Review (Related Works) --> Literature Review
 
-Methodology (Problem Definition & Method) --> Methodology
+3. Methodology (Problem Definition & Method) --> Methodology
 
-Experiment --> Experiments
+4. Experiment --> Experiments
 
 Conclusion
 
@@ -30,19 +32,29 @@ Title
 
 Abstract
 
-Introduction --> Problem Statement and Research Motivation
+1. Introduction --> Problem Statement and Research Motivation
 
-Methodology (Problem Definition & Method) --> Methodology
+2. Methodology (Problem Definition & Method) --> Methodology
 
-Experiment --> Experiments
+3. Experiment --> Experiments
 
-Literature Review (Related Works) --> Literature Review
+4. Literature Review (Related Works) --> Literature Review
 
 Conclusion
 
 ---
 
-## 1. 🧠 Problem Statement and Research Motivation
+1. get an idea or trying to solve a problem
+2. literature review, find existing solutions, evaluation datasets, metrics
+   a. full fill our requirements, then end
+   b. cannot full fill our requirements, then continue
+3. propose our own solution and proof that our solution is better
+4. run experiment
+5. complete the paper
+
+---
+
+## 1. 🧠 Introduction: Problem Statement and Research Motivation
 
 ### 🔍 Background Introduction
 
