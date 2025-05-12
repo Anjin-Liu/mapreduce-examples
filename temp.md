@@ -4,6 +4,14 @@
 
 This guide provides a structured approach to writing a high-quality academic paper, especially in technical and scientific domains. It is designed to help clearly articulate the **problem**, justify the **significance**, critically review existing **literature**, detail the **methodology**, and present **experimental** evidence to support your claims.
 
+Title
+Abstract
+Introduction --> Problem Statement and Research Motivation
+Literature Review --> Literature Review
+Methodology --> Methodology
+Experiment --> Experiments
+Conclusion
+
 ---
 
 ## 1. 🧠 Problem Statement and Research Motivation
